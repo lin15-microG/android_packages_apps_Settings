@@ -416,4 +416,6 @@
     <string name="network_custom_dns_error">You have not specified any alternative DNS!\nSetting a custom DNS is therefore not possible.</string>
     <string name="network_custom_dns_warning">A custom DNS should be set for both, IPv4 and IPv6!\nThe current setup could cause issues.</string>
 
+    <string name="deny_new_usb_title">USB accessories</string>
+    <string name="deny_new_usb_summary">Control support for new/unknown USB peripherals such as input (mice, keyboards, joysticks) and storage devices.</string>
 </resources>

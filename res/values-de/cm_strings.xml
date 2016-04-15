@@ -322,4 +322,6 @@
     <string name="network_custom_dns_reset">Zurücksetzen</string>
     <string name="network_custom_dns_error">Es wurde kein alternativer DNS spezifiziert!\nÜberschreiben des DNS ist daher nicht möglich.</string>
     <string name="network_custom_dns_warning">Eigene DNS Server sollten sowohl für IPv4 als auch für IPv6 definiert werden!\nBei der gewählten Konfiguration können Probleme auftreten.</string>
+    <string name="deny_new_usb_title">USB Kontrolle</string>
+    <string name="deny_new_usb_summary">Unterstützung für neue/unbekannte USB-Eingabegeräte (Maus, Tastatur, Joystick) und -Speicher festlegen.</string>
 </resources>
