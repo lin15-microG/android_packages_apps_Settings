@@ -239,7 +239,8 @@ public class InstalledAppDetails extends AppInfoBase
         // by not allowing disabling of apps signed with the
         // system cert and any launcher app in the system.
         if (mHomePackages.contains(mAppEntry.info.packageName)
-                || Utils.isSystemPackage(getContext().getResources(), mPm, mPackageInfo)) {
+                || Utils.isSystemPackage(getContext().getResources(), mPm, mPackageInfo) 
+                || mAppEntry.info.packageName.equals("com.android.inputmethod.latin")) {
             // Disable button for core system applications.
             button.setText(R.string.disable_text);
         } else if (mAppEntry.info.enabled && !isDisabledUntilUsed()) {
