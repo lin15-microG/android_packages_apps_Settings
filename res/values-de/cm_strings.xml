@@ -333,4 +333,7 @@
   <string name="data_usage_app_restrict_data_summary">Mobilfunkdatenzugriff erlauben</string>
   <string name="data_usage_app_restrict_wifi">WLAN-Daten</string>
   <string name="data_usage_app_restrict_wifi_summary">WLAN-Datenzugriff erlauben</string>
+  <!-- MAC randomization -->
+  <string name="randomize_mac_title">MAC Adressen randomisieren</string>
+  <string name="randomize_mac_summary">Zufällige MAC-Adresse zuweisen bei WLAN-Anmeldung. Die Scan-Randomisierung ist auch aktiv, wenn diese Option inaktiv ist.</string>
 </resources>

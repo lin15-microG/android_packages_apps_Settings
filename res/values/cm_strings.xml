@@ -376,4 +376,8 @@
     <string name="data_usage_app_restrict_data_summary">Enable usage of cellular data</string>
     <string name="data_usage_app_restrict_wifi">Wi\u2011Fi data</string>
     <string name="data_usage_app_restrict_wifi_summary">Enable usage of Wi\u2011Fi data</string>
+
+    <!-- MAC randomization -->
+    <string name="randomize_mac_title">Randomize MAC address</string>
+    <string name="randomize_mac_summary">Assign a new random MAC address when Wi-Fi is brought up. Scanning MAC randomization is still used with this disabled.</string>
 </resources>
