@@ -235,6 +235,15 @@ public class AppOpsState {
             new boolean[] { true }
             );
 
+    public static final OpsTemplate SENSOR_TEMPLATE = new OpsTemplate(
+            new int[] { AppOpsManager.OP_BODY_SENSORS,
+                    AppOpsManager.OP_MOTION_SENSORS,
+                    AppOpsManager.OP_OTHER_SENSORS },
+            new boolean[] { true,
+                    false,
+                    false }
+            );
+
     public static final OpsTemplate SU_TEMPLATE = new OpsTemplate(
             new int[] { AppOpsManager.OP_SU },
             new boolean[] { false }
@@ -251,7 +260,6 @@ public class AppOpsState {
                     AppOpsManager.OP_USE_SIP,
                     AppOpsManager.OP_PROCESS_OUTGOING_CALLS,
                     AppOpsManager.OP_USE_FINGERPRINT,
-                    AppOpsManager.OP_BODY_SENSORS,
                     AppOpsManager.OP_READ_CELL_BROADCASTS,
                     AppOpsManager.OP_MOCK_LOCATION,
                     AppOpsManager.OP_READ_EXTERNAL_STORAGE,
@@ -259,7 +267,6 @@ public class AppOpsState {
                     AppOpsManager.OP_TURN_SCREEN_ON,
                     AppOpsManager.OP_GET_ACCOUNTS },
             new boolean[] { true,
-                    true,
                     true,
                     true,
                     true,
@@ -285,7 +292,7 @@ public class AppOpsState {
     public static final OpsTemplate[] ALL_PERMS_TEMPLATES = new OpsTemplate[] {
             LOCATION_TEMPLATE, PERSONAL_TEMPLATE, MESSAGING_TEMPLATE,
             MEDIA_TEMPLATE, DEVICE_TEMPLATE, RUN_IN_BACKGROUND_TEMPLATE,
-            BOOTUP_TEMPLATE, SU_TEMPLATE, REMAINING_TEMPLATE
+            BOOTUP_TEMPLATE, SU_TEMPLATE, SENSOR_TEMPLATE, REMAINING_TEMPLATE
     };
 
     /**

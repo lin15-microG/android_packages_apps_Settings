@@ -129,6 +129,7 @@ Vous êtes maintenant à <xliff:g id="step_count">%1$d</xliff:g> étapes de l\'a
   <string name="app_ops_categories_device">Appareil</string>
   <string name="app_ops_categories_run_in_background">Exécuter en arrière plan</string>
   <string name="app_ops_categories_bootup">Démarrage</string>
+  <string name="app_ops_categories_sensors">Capteurs</string>
   <string name="app_ops_categories_su">Accès root</string>
   <string name="app_ops_categories_other">Autre</string>
   <!-- User display names for app ops codes - extension of AOSP -->
@@ -207,6 +208,8 @@ Vous êtes maintenant à <xliff:g id="step_count">%1$d</xliff:g> étapes de l\'a
   <string name="app_ops_summaries_start_at_boot">démarrer au lancement</string>
   <string name="app_ops_summaries_toggle_nfc">activer/désactiver le NFC</string>
   <string name="app_ops_summaries_toggle_mobile_data">activer/désactiver les données mobiles</string>
+  <string name="app_ops_summaries_motion_sensors">utiliser les capteurs de mouvement</string>
+  <string name="app_ops_summaries_other_sensors">utiliser d\'autres capteurs</string>
   <string name="app_ops_summaries_superuser">accès root</string>
   <!-- User display names for app ops codes - extension of AOSP -->
   <string name="app_ops_labels_coarse_location">Position approximative</string>
@@ -284,6 +287,8 @@ Vous êtes maintenant à <xliff:g id="step_count">%1$d</xliff:g> étapes de l\'a
   <string name="app_ops_labels_start_at_boot">Démarrer au lancement</string>
   <string name="app_ops_labels_toggle_nfc">Activer/désactiver le NFC</string>
   <string name="app_ops_labels_toggle_mobile_data">Activer/désactiver les données mobiles</string>
+  <string name="app_ops_labels_motion_sensors">Capteur de mouvement</string>
+  <string name="app_ops_labels_other_sensors">autres Capteurs</string>
   <string name="app_ops_labels_superuser">Accès root</string>
   <!-- App ops permissions -->
   <string name="app_ops_permissions_allowed">Autorisé</string>

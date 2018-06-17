@@ -128,6 +128,7 @@
   <string name="app_ops_categories_device">Gerät</string>
   <string name="app_ops_categories_run_in_background">Im Hintergrund ausführen</string>
   <string name="app_ops_categories_bootup">Systemstart</string>
+  <string name="app_ops_categories_sensors">Sensoren</string>
   <string name="app_ops_categories_su">Root-Zugriff</string>
   <string name="app_ops_categories_other">Andere</string>
   <!-- User display names for app ops codes - extension of AOSP -->
@@ -206,6 +207,8 @@
   <string name="app_ops_summaries_start_at_boot">Beim Booten starten</string>
   <string name="app_ops_summaries_toggle_nfc">NFC ein-/ausschalten</string>
   <string name="app_ops_summaries_toggle_mobile_data">Mobile Daten ein-/ausschalten</string>
+  <string name="app_ops_summaries_motion_sensors">Nutzung Bewegungssensoren</string>
+  <string name="app_ops_summaries_other_sensors">Sonstige Sensoren</string>
   <string name="app_ops_summaries_superuser">Root-Zugriff</string>
   <!-- User display names for app ops codes - extension of AOSP -->
   <string name="app_ops_labels_coarse_location">Ungefährer Standort</string>
@@ -283,6 +286,8 @@
   <string name="app_ops_labels_start_at_boot">Beim Booten starten</string>
   <string name="app_ops_labels_toggle_nfc">NFC ein-/ausschalten</string>
   <string name="app_ops_labels_toggle_mobile_data">Mobile Daten ein-/ausschalten</string>
+  <string name="app_ops_labels_motion_sensors">Bewegungssensoren</string>
+  <string name="app_ops_labels_other_sensors">sonstige Sensoren</string>
   <string name="app_ops_labels_superuser">Root-Zugriff</string>
   <!-- App ops permissions -->
   <string name="app_ops_permissions_allowed">Erlaubt</string>
