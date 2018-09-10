@@ -338,8 +338,4 @@
   <!-- MAC randomization -->
   <string name="randomize_mac_title">MAC Adressen randomisieren</string>
   <string name="randomize_mac_summary">Zufällige MAC-Adresse zuweisen bei WLAN-Anmeldung. Die Scan-Randomisierung ist auch aktiv, wenn diese Option inaktiv ist.</string>
-  <!-- Captive Portal -->
-  <string name="captive_portal_switch_title">Captive Portal Modus</string>
-  <string name="captive_portal_switch_summary">Ein- oder Ausschalten der Netzwerkverbindungs-Versuche über ein Captive Portal (Vorgabe EIN).</string>
-
 </resources>
