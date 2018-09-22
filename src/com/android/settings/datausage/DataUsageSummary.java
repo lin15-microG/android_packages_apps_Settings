@@ -169,6 +169,8 @@ public class DataUsageSummary extends DataUsageBase implements Indexable,
         if (UserManager.get(getContext()).isAdminUser()) {
             inflater.inflate(R.menu.data_usage, menu);
             menu.findItem(R.id.captive_portal_switch).setChecked(isCaptivePortalDisabled());
+            menu.findItem(R.id.ziptables_block_switch).setChecked(
+                    SystemProperties.getBoolean("persist.privacy.iptab_blk", false));
         }
         super.onCreateOptionsMenu(menu, inflater);
     }
@@ -190,6 +192,14 @@ public class DataUsageSummary extends DataUsageBase implements Indexable,
                     CaptivePortalWarningDialog.show(this);
                 }
                 item.setChecked(isCaptivePortalDisabled());
+                return true;
+            }
+            case R.id.ziptables_block_switch: {
+                boolean propValue = SystemProperties.
+                            getBoolean("persist.privacy.iptab_blk", false);
+                propValue = !propValue;
+                SystemProperties.set("persist.privacy.iptab_blk", propValue ? "1" : "0" );
+                item.setChecked(propValue);
                 return true;
             }
         }

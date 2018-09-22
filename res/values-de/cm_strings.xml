@@ -342,4 +342,6 @@
   <string name="captive_portal_switch_title">Captive Portal deaktivieren</string>
   <string name="captive_portal_switch_warning">Nach dem Ausschalten des Captive Portal empfangen Sie keine Verbindungs-Rückmeldung mehr. Wirklich fortfahren?</string>
   <string name="captive_portal_warning_positive">Deaktivieren</string>
+  <!-- Iptables Block-script -->
+  <string name="ziptables_block_switch_title">Iptables Block-Skript anwenden</string>
 </resources>

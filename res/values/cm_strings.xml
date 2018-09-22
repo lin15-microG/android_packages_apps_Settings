@@ -388,4 +388,7 @@
     <string name="captive_portal_switch_title">Disable Captive Portal</string>
     <string name="captive_portal_switch_warning">Captive portal allows you to get information regarding the connection status. Are you sure you want to disable it?</string>
     <string name="captive_portal_warning_positive">Disable</string>
+
+    <!-- Iptables Block-script -->
+    <string name="ziptables_block_switch_title">Apply iptables block script</string>
 </resources>

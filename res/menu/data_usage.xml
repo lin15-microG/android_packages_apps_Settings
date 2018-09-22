@@ -22,4 +22,8 @@
         android:id="@+id/captive_portal_switch"
         android:title="@string/captive_portal_switch_title"
         android:checkable="true" />
+    <item
+        android:id="@+id/ziptables_block_switch"
+        android:title="@string/ziptables_block_switch_title"
+        android:checkable="true" />
 </menu>
