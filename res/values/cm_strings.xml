@@ -248,6 +248,9 @@
     <string name="app_ops_summaries_motion_sensors">Motion Sensor usage</string>
     <string name="app_ops_summaries_other_sensors">Other Sensor usage</string>
     <string name="app_ops_summaries_superuser">root access</string>
+    <string name="app_ops_summaries_read_clipboard_bgr">Background clipboard access</string>
+    <string name="app_ops_summaries_record_audio_bgr">Background audio recording</string>
+    <string name="app_ops_summaries_coarse_location_bgr">Background location access</string>
 
     <!-- User display names for app ops codes - extension of AOSP -->
     <string name="app_ops_labels_coarse_location">Coarse location</string>
@@ -328,6 +331,9 @@
     <string name="app_ops_labels_motion_sensors">Motion Sensors</string>
     <string name="app_ops_labels_other_sensors">Other Sensors</string>
     <string name="app_ops_labels_superuser">Root access</string>
+    <string name="app_ops_labels_read_clipboard_bgr">Background clipboard access</string>
+    <string name="app_ops_labels_record_audio_bgr">Background audio recording</string>
+    <string name="app_ops_labels_coarse_location_bgr">Background location access</string>
 
     <!-- App ops permissions -->
     <string name="app_ops_permissions_allowed">Allowed</string>

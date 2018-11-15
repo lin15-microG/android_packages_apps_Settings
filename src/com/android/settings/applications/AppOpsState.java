@@ -226,8 +226,14 @@ public class AppOpsState {
             );
 
     public static final OpsTemplate RUN_IN_BACKGROUND_TEMPLATE = new OpsTemplate(
-            new int[] { AppOpsManager.OP_RUN_IN_BACKGROUND },
-            new boolean[] { false }
+            new int[] { AppOpsManager.OP_RUN_IN_BACKGROUND,
+                    AppOpsManager.OP_READ_CLIPBOARD_BACKGROUND,
+                    AppOpsManager.OP_RECORD_AUDIO_BACKGROUND,
+                    AppOpsManager.OP_COARSE_LOCATION_BACKGROUND },
+            new boolean[] { false,
+                    false,
+                    false,
+                    false }
             );
 
     public static final OpsTemplate BOOTUP_TEMPLATE = new OpsTemplate(

@@ -118,6 +118,9 @@
         <item>@string/app_ops_summaries_superuser</item>
         <item>@string/app_ops_summaries_motion_sensors</item>
         <item>@string/app_ops_summaries_other_sensors</item>
+        <item>@string/app_ops_summaries_read_clipboard_bgr</item>
+        <item>@string/app_ops_summaries_record_audio_bgr</item>
+        <item>@string/app_ops_summaries_coarse_location_bgr</item>
     </string-array>
 
     <!-- User display names for app ops codes - extension of AOSP -->
@@ -200,6 +203,9 @@
         <item>@string/app_ops_labels_superuser</item>
         <item>@string/app_ops_labels_motion_sensors</item>
         <item>@string/app_ops_labels_other_sensors</item>
+        <item>@string/app_ops_labels_read_clipboard_bgr</item>
+        <item>@string/app_ops_labels_record_audio_bgr</item>
+        <item>@string/app_ops_labels_coarse_location_bgr</item>
     </string-array>
 
     <!-- App ops permissions -->

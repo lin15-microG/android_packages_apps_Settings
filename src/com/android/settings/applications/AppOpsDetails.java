@@ -124,7 +124,10 @@ public class AppOpsDetails extends SettingsPreferenceFragment {
         OP_ICONS.put(AppOpsManager.OP_WIFI_SCAN, R.drawable.ic_perm_wifi);
         OP_ICONS.put(AppOpsManager.OP_WRITE_CLIPBOARD, R.drawable.ic_perm_clipboard);
         OP_ICONS.put(AppOpsManager.OP_WRITE_SETTINGS, R.drawable.ic_perm_settings);
-        OP_ICONS.put(AppOpsManager.OP_WRITE_SMS , R.drawable.ic_perm_sms);
+        OP_ICONS.put(AppOpsManager.OP_WRITE_SMS, R.drawable.ic_perm_sms);
+        OP_ICONS.put(AppOpsManager.OP_READ_CLIPBOARD_BACKGROUND, R.drawable.ic_perm_background);
+        OP_ICONS.put(AppOpsManager.OP_RECORD_AUDIO_BACKGROUND, R.drawable.ic_perm_background);
+        OP_ICONS.put(AppOpsManager.OP_COARSE_LOCATION_BACKGROUND, R.drawable.ic_perm_background);
     }
 
     private boolean isPlatformSigned() {
