@@ -110,6 +110,8 @@ import lineageos.providers.LineageSettings;
 
 import org.lineageos.internal.util.FileUtils;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -245,6 +247,9 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
             = "immediately_destroy_activities";
     private static final String APP_PROCESS_LIMIT_KEY = "app_process_limit";
 
+    private static final String RESTORE_HOSTS_SWITCH_KEY = "restore_hosts_switch";
+    private static final String RESTORE_HOSTS_FLAG_FILE = ".hosts.backup";
+
     private static final String BACKGROUND_CHECK_KEY = "background_check";
 
     private static final String SHOW_ALL_ANRS_KEY = "show_all_anrs";
@@ -350,6 +355,8 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
 
     private SwitchPreference mUSBAudio;
     private SwitchPreference mImmediatelyDestroyActivities;
+
+    private SwitchPreference mRestoreHostsFlag;
 
     private ListPreference mAppProcessLimit;
 
@@ -487,6 +494,7 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
             disableForUser(mClearAdbKeys);
             disableForUser(mEnableTerminal);
             disableForUser(mPassword);
+            disableForUser(mRestoreHostsFlag);
         }
 
         mDebugAppPref = findPreference(DEBUG_APP_KEY);
@@ -566,6 +574,9 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
                 IMMEDIATELY_DESTROY_ACTIVITIES_KEY);
         mAllPrefs.add(mImmediatelyDestroyActivities);
         mResetSwitchPrefs.add(mImmediatelyDestroyActivities);
+
+        mRestoreHostsFlag = (SwitchPreference) findPreference(RESTORE_HOSTS_SWITCH_KEY);
+        mAllPrefs.add(mRestoreHostsFlag);
 
         mAppProcessLimit = addListPreference(APP_PROCESS_LIMIT_KEY);
 
@@ -891,6 +902,7 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
         updateAnimationScaleOptions();
         updateOverlayDisplayDevicesOptions();
         updateImmediatelyDestroyActivitiesOptions();
+        updateRestoreHostsFlagOption();
         updateAppProcessLimitOptions();
         updateShowAllANRsOptions();
         updateShowNotificationChannelWarningsOptions();
@@ -971,6 +983,7 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
         resetDebuggerOptions();
         resetAdbNotifyOptions();
         resetRootAccessOptions();
+        resetRestoreHostsFlag();
         writeLogpersistOption(null, true);
         writeLogdSizeOption(null);
         writeAnimationScaleOption(0, mWindowAnimationScale, null);
@@ -1037,6 +1050,11 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
                     Settings.Secure.ADB_ENABLED, 1);
         }
         updateRootAccessOptions();
+    }
+
+    private void resetRestoreHostsFlag() {
+        deleteRestoreHostsFile();
+        updateRestoreHostsFlagOption();
     }
 
     private void updateHdcpValues() {
@@ -2397,6 +2415,30 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
                 != 0);
     }
 
+    private void updateRestoreHostsFlagOption() {
+        updateSwitchPreference(mRestoreHostsFlag, checkRestoreHostsFile());
+    }
+
+
+    private void createRestoreHostsFile() {
+        File flagFile = new File(getContext().getFilesDir(), RESTORE_HOSTS_FLAG_FILE);
+        try {
+            flagFile.createNewFile();
+        } catch (IOException e) {
+            Log.e(TAG, "failed to create" + RESTORE_HOSTS_FLAG_FILE, e);
+        }
+    }
+
+    private void deleteRestoreHostsFile() {
+        File flagFile = new File(getContext().getFilesDir(), RESTORE_HOSTS_FLAG_FILE);
+        flagFile.delete();
+    }
+
+    private boolean checkRestoreHostsFile() {
+        File flagFile = new File(getContext().getFilesDir(), RESTORE_HOSTS_FLAG_FILE);
+        return flagFile.exists();
+    }
+
     private void updateAnimationScaleValue(int which, ListPreference pref) {
         try {
             float scale = mWindowManager.getAnimationScale(which);
@@ -2717,6 +2759,12 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
             writeDisableOverlaysOption();
         } else if (preference == mImmediatelyDestroyActivities) {
             writeImmediatelyDestroyActivitiesOptions();
+        } else if (preference == mRestoreHostsFlag) {
+            if (mRestoreHostsFlag.isChecked()) {
+                createRestoreHostsFile();
+            } else {
+                deleteRestoreHostsFile();
+            }
         } else if (preference == mShowAllANRs) {
             writeShowAllANRsOptions();
         } else if (preference == mShowNotificationChannelWarnings) {

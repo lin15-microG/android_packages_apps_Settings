@@ -397,4 +397,9 @@
 
     <!-- Iptables Block-script -->
     <string name="ziptables_block_switch_title">Apply iptables block script</string>
+
+    <!-- Restore hosts file -->
+    <string name="restore_hosts_switch_title">Restore hosts file during update</string>
+    <string name="restore_hosts_switch_summary">If active, the /etc/hosts file is restored during an update. This ROM delivers a regularly updated hosts file with many blocked ad-/malware sites.\nThis setting therefore only makes sense, if you use a hosts editor app.</string>
+
 </resources>

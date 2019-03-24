@@ -514,6 +514,11 @@
             android:key="reset_shortcut_manager_throttling"
             android:title="@string/reset_shortcut_manager_throttling" />
 
+        <SwitchPreference
+            android:key="restore_hosts_switch"
+            android:title="@string/restore_hosts_switch_title"
+            android:summary="@string/restore_hosts_switch_summary" />
+
         <lineageos.preference.LineageSecureSettingSwitchPreference
             android:key="kill_app_longpress_back"
             android:title="@string/kill_app_longpress_back"
