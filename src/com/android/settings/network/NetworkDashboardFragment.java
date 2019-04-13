@@ -45,7 +45,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class NetworkDashboardFragment extends DashboardFragment implements
-        MobilePlanPreferenceHost {
+        MobilePlanPreferenceHost, CaptivePortalWarningDialogHost {
 
     private static final String TAG = "NetworkDashboardFrag";
 
@@ -69,6 +69,7 @@ public class NetworkDashboardFragment extends DashboardFragment implements
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        mProgressiveDisclosureMixin.setTileLimit(7);
         mNetworkResetController = new NetworkResetActionMenuController(context);
     }
 
@@ -103,6 +104,10 @@ public class NetworkDashboardFragment extends DashboardFragment implements
                 new MobileNetworkPreferenceController(context);
         final VpnPreferenceController vpnPreferenceController =
                 new VpnPreferenceController(context);
+        final CaptivePortalModePreferenceController captiveportalModePreferenceController =
+                new CaptivePortalModePreferenceController(context, fragment);
+        final IptabBlockScriptModePreferenceController iptabBlockScriptModePreferenceController =
+                new IptabBlockScriptModePreferenceController(context, fragment);
 
         if (lifecycle != null) {
             lifecycle.addObserver(airplaneModePreferenceController);
@@ -120,7 +125,21 @@ public class NetworkDashboardFragment extends DashboardFragment implements
         controllers.add(new ProxyPreferenceController(context));
         controllers.add(mobilePlanPreferenceController);
         controllers.add(wifiPreferenceController);
+        controllers.add(captiveportalModePreferenceController);
+        controllers.add(iptabBlockScriptModePreferenceController);
         return controllers;
+    }
+
+    public void onCaptivePortalSwitchOffDialogConfirmed() {
+        final CaptivePortalModePreferenceController controller =
+                getPreferenceController(CaptivePortalModePreferenceController.class);
+        controller.onCaptivePortalSwitchOffDialogConfirmed();
+    }
+
+    public void onCaptivePortalSwitchOffDialogDismissed() {
+        final CaptivePortalModePreferenceController controller =
+                getPreferenceController(CaptivePortalModePreferenceController.class);
+        controller.onCaptivePortalSwitchOffDialogDismissed();
     }
 
     @Override

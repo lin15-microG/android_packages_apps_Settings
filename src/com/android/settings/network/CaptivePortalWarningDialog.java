@@ -53,8 +53,8 @@ public class CaptivePortalWarningDialog extends InstrumentedDialogFragment imple
                 .setTitle(R.string.captive_portal_switch_title)
                 .setMessage(R.string.captive_portal_switch_warning)
                 .setIconAttribute(android.R.attr.alertDialogIcon)
-                .setPositiveButton(R.string.captive_portal_warning_positive, this /* onClickListener */)
-                .setNegativeButton(android.R.string.no, null /* onClickListener */)
+                .setPositiveButton(android.R.string.yes, this /* onClickListener */)
+                .setNegativeButton(android.R.string.no, this /* onClickListener */)
                 .create();
     }
 
@@ -64,6 +64,10 @@ public class CaptivePortalWarningDialog extends InstrumentedDialogFragment imple
         if (host == null) {
             return;
         }
-        host.onCaptivePortalSwitchOffDialogConfirmed();
+        if (which == DialogInterface.BUTTON_POSITIVE) {
+            host.onCaptivePortalSwitchOffDialogConfirmed();
+        } else {
+            host.onCaptivePortalSwitchOffDialogDismissed();
+        }
     }
 }

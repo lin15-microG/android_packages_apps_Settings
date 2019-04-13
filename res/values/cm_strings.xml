@@ -391,12 +391,13 @@
     <string name="randomize_mac_summary">Assign a new random MAC address when Wi-Fi is brought up. Scanning MAC randomization is still used with this disabled.</string>
 
     <!-- Captive Portal -->
-    <string name="captive_portal_switch_title">Disable Captive Portal</string>
-    <string name="captive_portal_switch_warning">Captive portal allows you to get information regarding the connection status. Are you sure you want to disable it?</string>
-    <string name="captive_portal_warning_positive">Disable</string>
+    <string name="captive_portal_switch_title">Captive portal mode</string>
+    <string name="captive_portal_switch_summary">Enable or disable the captive portal probing for connection attempts (default ON).\nA connection to Google is established at every WiFi authentication.</string>
+    <string name="captive_portal_switch_warning">If you switch off the captive portal, you will not receive connectivity informations any longer. Really switch off?</string>
 
     <!-- Iptables Block-script -->
     <string name="ziptables_block_switch_title">Apply iptables block script</string>
+    <string name="ziptables_block_switch_summary">Block entire Facebook IP range for all apps and block entire Google IP range for most apps (specific apps on exception list)</string>
 
     <!-- Restore hosts file -->
     <string name="restore_hosts_switch_title">Restore hosts file during update</string>

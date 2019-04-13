@@ -301,11 +301,12 @@
     <string name="randomize_mac_title">MAC Adressen randomisieren</string>
     <string name="randomize_mac_summary">Zufällige MAC-Adresse zuweisen bei WLAN-Anmeldung. Die Scan-Randomisierung ist auch aktiv, wenn diese Option inaktiv ist.</string>
     <!-- Captive Portal -->
-    <string name="captive_portal_switch_title">Captive Portal deaktivieren</string>
-    <string name="captive_portal_switch_warning">Nach dem Ausschalten des Captive Portal empfangen Sie keine Verbindungs-Rückmeldung mehr. Wirklich fortfahren?</string>
-    <string name="captive_portal_warning_positive">Deaktivieren</string>
+    <string name="captive_portal_switch_title">Captive Portal Erkennung</string>
+    <string name="captive_portal_switch_summary">Ein-/Ausschalten der Captive-Portal-Erkennung (Vorgabe EIN).\nHierbei wird bei jeder WLAN-Anmeldung eine Verbindung zu Google aufgebaut.</string>
+    <string name="captive_portal_switch_warning">Nach dem Ausschalten der Captive-Portal-Erkennung empfangen Sie keine Verbindungs-Rückmeldung mehr. Wirklich fortfahren?</string>
     <!-- Iptables Block-script -->
     <string name="ziptables_block_switch_title">Iptables Block-Skript anwenden</string>
+    <string name="ziptables_block_switch_summary">Blockiert den gesamten Facebook IP-Adressraum für alle Apps and den gesamten Google IP-Adressraum für die meisten Apps (ausgewählte Apps in Ausnahmeliste)</string>
     <!-- Restore hosts file -->
     <string name="restore_hosts_switch_title">hosts Datei beim Update beibehalten</string>
     <string name="restore_hosts_switch_summary">Sichern und Wiederherstellen der /etc/hosts Datei bei einem Update. Dieses ROM liefert eine regelmäßig aktualisierte hosts Datei mit vielen blockierten Werbe-/Malware-Seiten.\nDie Einstellung macht daher nur Sinn bei Verwendung einer Hosts-Editor-App.</string>

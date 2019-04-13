@@ -25,4 +25,9 @@ public interface CaptivePortalWarningDialogHost {
      * Called when the user presses YES on the warning dialog.
      */
     void onCaptivePortalSwitchOffDialogConfirmed();
+
+    /**
+     * Called when the user presses NO/cancel on the warning dialog.
+     */
+    void onCaptivePortalSwitchOffDialogDismissed();
 }
