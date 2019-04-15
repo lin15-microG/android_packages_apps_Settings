@@ -18,6 +18,7 @@ package com.android.settings.network;
 import android.app.Fragment;
 import android.content.Context;
 import android.os.SystemProperties;
+import android.os.UserManager;
 import android.provider.Settings;
 import android.support.v14.preference.SwitchPreference;
 import android.support.v7.preference.Preference;
@@ -33,10 +34,12 @@ public class IptabBlockScriptModePreferenceController extends AbstractPreference
 
     private SwitchPreference mCaptivePortalMode;
     private final Fragment mFragment;
+    private final UserManager mUm;
 
     public IptabBlockScriptModePreferenceController(Context context, Fragment hostFragment) {
         super(context);
         mFragment = hostFragment;
+        mUm = UserManager.get(context);
     }
 
     @Override
@@ -54,7 +57,7 @@ public class IptabBlockScriptModePreferenceController extends AbstractPreference
 
     @Override
     public boolean isAvailable() {
-        return true;
+        return mUm.isAdminUser();
     }
 
     @Override

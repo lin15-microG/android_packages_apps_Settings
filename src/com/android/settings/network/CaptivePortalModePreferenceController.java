@@ -17,6 +17,7 @@ package com.android.settings.network;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.os.UserManager;
 import android.provider.Settings;
 import android.support.v14.preference.SwitchPreference;
 import android.support.v7.preference.Preference;
@@ -33,11 +34,12 @@ public class CaptivePortalModePreferenceController extends AbstractPreferenceCon
     private SwitchPreference mCaptivePortalMode;
     private Preference mPreference;
     private final Fragment mFragment;
+    private final UserManager mUm;
 
     public CaptivePortalModePreferenceController(Context context, Fragment hostFragment) {
         super(context);
-
         mFragment = hostFragment;
+        mUm = UserManager.get(context);
     }
 
     @Override
@@ -71,7 +73,7 @@ public class CaptivePortalModePreferenceController extends AbstractPreferenceCon
 
     @Override
     public boolean isAvailable() {
-        return true;
+        return mUm.isAdminUser();
     }
 
     @Override
