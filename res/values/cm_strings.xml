@@ -392,7 +392,7 @@
 
     <!-- Captive Portal -->
     <string name="captive_portal_switch_title">Captive portal mode</string>
-    <string name="captive_portal_switch_summary">Enable or disable the captive portal probing for connection attempts (default ON).\nA connection to Google is established at every WiFi authentication.</string>
+    <string name="captive_portal_switch_summary">Enable or disable the captive portal probing for connection attempts (default ON).\nHowever, a connection to Google is established at every WiFi authentication!</string>
     <string name="captive_portal_switch_warning">If you switch off the captive portal, you will not receive connectivity informations any longer. Really switch off?</string>
 
     <!-- Iptables Block-script -->
@@ -400,7 +400,7 @@
     <string name="ziptables_block_switch_summary">Block entire Facebook IP range for all apps and block entire Google IP range for most apps (specific apps on exception list)</string>
 
     <!-- Restore hosts file -->
-    <string name="restore_hosts_switch_title">Restore hosts file during update</string>
-    <string name="restore_hosts_switch_summary">If active, the /etc/hosts file is restored during an update. This ROM delivers a regularly updated hosts file with many blocked ad-/malware sites.\nThis setting therefore only makes sense, if you use a hosts editor app.</string>
+    <string name="restore_hosts_switch_title">Backup/Restore hosts file during update</string>
+    <string name="restore_hosts_switch_summary">This ROM delivers a regularly updated hosts file with many blocked ad-/malware sites.\nThis setting therefore only makes sense, if you use a hosts editor app.\nIt only works, if the data partition is decrypted during the update.</string>
 
 </resources>
