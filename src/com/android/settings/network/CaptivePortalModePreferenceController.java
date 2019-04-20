@@ -31,7 +31,6 @@ public class CaptivePortalModePreferenceController extends AbstractPreferenceCon
     private static final String TAG = "CaptivePortalModePreferenceController";
     private static final String CAPTIVE_PORTAL_SWITCH_KEY = "captive_portal_switch";
 
-    private SwitchPreference mCaptivePortalMode;
     private Preference mPreference;
     private final Fragment mFragment;
     private final UserManager mUm;

@@ -15,7 +15,6 @@
  */
 package com.android.settings.network;
 
-import android.app.Fragment;
 import android.content.Context;
 import android.os.SystemProperties;
 import android.os.UserManager;
@@ -33,12 +32,10 @@ public class IptabBlockScriptModePreferenceController extends AbstractPreference
     private static final String IPTAB_BLOCKSCRIPT_SWITCH_KEY = "ziptables_block_switch";
 
     private SwitchPreference mCaptivePortalMode;
-    private final Fragment mFragment;
     private final UserManager mUm;
 
-    public IptabBlockScriptModePreferenceController(Context context, Fragment hostFragment) {
+    public IptabBlockScriptModePreferenceController(Context context) {
         super(context);
-        mFragment = hostFragment;
         mUm = UserManager.get(context);
     }
 
