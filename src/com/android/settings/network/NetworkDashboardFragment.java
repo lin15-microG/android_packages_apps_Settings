@@ -108,6 +108,8 @@ public class NetworkDashboardFragment extends DashboardFragment implements
                 new CaptivePortalModePreferenceController(context, fragment);
         final IptabBlockScriptModePreferenceController iptabBlockScriptModePreferenceController =
                 new IptabBlockScriptModePreferenceController(context);
+        final CustomDNSPreferenceController customDNSPreferenceController =
+                new CustomDNSPreferenceController(context);
 
         if (lifecycle != null) {
             lifecycle.addObserver(airplaneModePreferenceController);
@@ -127,6 +129,7 @@ public class NetworkDashboardFragment extends DashboardFragment implements
         controllers.add(wifiPreferenceController);
         controllers.add(captiveportalModePreferenceController);
         controllers.add(iptabBlockScriptModePreferenceController);
+        controllers.add(customDNSPreferenceController);
         return controllers;
     }
 

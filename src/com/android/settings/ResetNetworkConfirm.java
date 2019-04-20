@@ -114,6 +114,9 @@ public class ResetNetworkConfirm extends OptionsMenuFragment {
                     Settings.Global.CAPTIVE_PORTAL_MODE, 1);
 
             SystemProperties.set("persist.privacy.iptab_blk", "0");
+            SystemProperties.set("persist.privacy.iptab_dns_srvip4", "");
+            SystemProperties.set("persist.privacy.iptab_dns_srvip6", "");
+            SystemProperties.set("persist.privacy.iptab_dns_switch", "0");
 
             Toast.makeText(context, R.string.reset_network_complete_toast, Toast.LENGTH_SHORT)
                     .show();

@@ -100,4 +100,12 @@
         android:persistent="false"
         android:order="25"/>
 
+    <Preference
+        android:key="network_custom_dns"
+        android:title="@string/network_custom_dns_title"
+        android:summary="@string/network_custom_dns_placeholder"
+        android:icon="@drawable/ic_settings_language"
+        android:persistent="false"
+        android:order="30"/>
+
 </PreferenceScreen>

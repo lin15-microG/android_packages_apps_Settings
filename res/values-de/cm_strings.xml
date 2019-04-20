@@ -310,5 +310,14 @@
     <!-- Restore hosts file -->
     <string name="restore_hosts_switch_title">Sichern/Wiederherstellen der hosts Datei beim Update</string>
     <string name="restore_hosts_switch_summary">Dieses ROM liefert eine regelmäßig aktualisierte hosts Datei mit vielen blockierten Werbe-/Malware-Seiten.\nDie Einstellung macht daher nur Sinn bei Verwendung einer Hosts-Editor-App.\nSie funktioniert nur, wenn die Data-Partition beim Flashen entschlüsselt ist!</string>
+    <!-- Custom DNS -->
+    <string name="network_custom_dns_title">DNS überschreiben</string>
+    <string name="network_custom_dns_summary">Den Standard-DNS global mittels Iptables NAT übersteuern. VPN wird nicht beeinflusst.</string>
+    <string name="network_custom_dns_ip4_title">IPv4 DNS</string>
+    <string name="network_custom_dns_ip6_title">IPv6 DNS</string>
+    <string name="network_custom_dns_ip_placeholder">Nicht gesetzt</string>
+    <string name="network_custom_dns_category">Information</string>
+    <string name="network_custom_dns_explanation_summary">Hier kann ein eigener DNS (IPv4/IPv6) gesetzt werden, der anstelle des ISP oder Router DNS verwendet wird.\nDies wird mittels Port 53 NAT über die ip(6)tables Firewall realisiert.\nVPN-Verbindungen sind hiervon ausgenommen.</string>
+    <string name="network_custom_dns_placeholder">Eigener DNS nicht gesetzt</string>
 
 </resources>

@@ -403,4 +403,14 @@
     <string name="restore_hosts_switch_title">Backup/Restore hosts file during update</string>
     <string name="restore_hosts_switch_summary">This ROM delivers a regularly updated hosts file with many blocked ad-/malware sites.\nThis setting therefore only makes sense, if you use a hosts editor app.\nIt only works, if the data partition is decrypted during the update.</string>
 
+    <!-- Custom DNS -->
+    <string name="network_custom_dns_title">Set custom DNS</string>
+    <string name="network_custom_dns_summary">Globally overwrite default DNS settings via iptables NAT. Does not intercept with VPN.</string>
+    <string name="network_custom_dns_ip4_title">IPv4 DNS</string>
+    <string name="network_custom_dns_ip6_title">IPv6 DNS</string>
+    <string name="network_custom_dns_ip_placeholder">Not set</string>
+    <string name="network_custom_dns_category">About Custom DNS</string>
+    <string name="network_custom_dns_explanation_summary">You can set a custom DNS server (IPv4/IPv6), which will be used instead of the DNS of your ISP or router.\nThe technology behind is a port 53 NAT via the ip(6)tables firewall\nThis will NOT impact connections via a VPN.</string>
+    <string name="network_custom_dns_placeholder">No Custom DNS is set</string>
+
 </resources>
