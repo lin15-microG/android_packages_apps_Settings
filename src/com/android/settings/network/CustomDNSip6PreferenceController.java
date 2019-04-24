@@ -26,15 +26,15 @@ import com.android.settings.core.PreferenceControllerMixin;
 import com.android.settings.R;
 import com.android.settingslib.core.AbstractPreferenceController;
 
-public class CustomDNSip4PreferenceController extends AbstractPreferenceController {
+public class CustomDNSip6PreferenceController extends AbstractPreferenceController {
 
-    private static final String TAG = "CustomDNSip4";
-    private static final String CUSTOM_DNS_IP4 = "network_custom_dns_ip4";
+    private static final String TAG = "CustomDNSip6";
+    private static final String CUSTOM_DNS_IP6 = "network_custom_dns_ip6";
 
     private final Fragment mFragment;
     private Preference mPreference;
 
-    public CustomDNSip4PreferenceController(Context context, Fragment hostFragment) {
+    public CustomDNSip6PreferenceController(Context context, Fragment hostFragment) {
         super(context);
         mFragment = hostFragment;
     }
@@ -51,11 +51,11 @@ public class CustomDNSip4PreferenceController extends AbstractPreferenceControll
 
     @Override
     public boolean handlePreferenceTreeClick(Preference preference) {
-        if (!TextUtils.equals(preference.getKey(), CUSTOM_DNS_IP4)) {
+        if (!TextUtils.equals(preference.getKey(), CUSTOM_DNS_IP6)) {
             return false;
         }
         mPreference = preference;
-        CustomDNSip4Dialog.show(mFragment);
+        CustomDNSip6Dialog.show(mFragment);
         return true;
     }
 
@@ -66,21 +66,21 @@ public class CustomDNSip4PreferenceController extends AbstractPreferenceControll
 
     @Override
     public String getPreferenceKey() {
-        return CUSTOM_DNS_IP4;
+        return CUSTOM_DNS_IP6;
     }
 
     private void updateSummary(Preference preference) {
-        final String propIP4 = SystemProperties.get("persist.privacy.iptab_dns_srvip4");
-        if (propIP4.equals("")) {
+        final String propIP6 = SystemProperties.get("persist.privacy.iptab_dns_srvip6");
+        if (propIP6.equals("")) {
             preference.setSummary(R.string.network_custom_dns_ip_placeholder);
         } else {
-            preference.setSummary(propIP4);
+            preference.setSummary(propIP6);
         }
     }
 
-    public void onCustomDNSip4DialogConfirmed() {
-       SystemProperties.set("persist.privacy.iptab_dns_srvip4",
-               CustomDNSip4Dialog.getResult());
+    public void onCustomDNSip6DialogConfirmed() {
+       SystemProperties.set("persist.privacy.iptab_dns_srvip6",
+               CustomDNSip6Dialog.getResult());
        updateSummary(mPreference);
     }
 }

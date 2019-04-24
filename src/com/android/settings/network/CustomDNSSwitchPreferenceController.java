@@ -15,22 +15,27 @@
  */
 package com.android.settings.network;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.os.SystemProperties;
 import android.support.v14.preference.SwitchPreference;
 import android.support.v7.preference.Preference;
 
 import com.android.settings.core.PreferenceControllerMixin;
+import com.android.settings.R;
 import com.android.settingslib.core.AbstractPreferenceController;
 
 public class CustomDNSSwitchPreferenceController extends AbstractPreferenceController
-        implements PreferenceControllerMixin, Preference.OnPreferenceChangeListener {
+        implements Preference.OnPreferenceChangeListener {
 
     private static final String TAG = "CustomDNSSwitch";
     private static final String CUSTOM_DNS_SWITCH_KEY = "network_custom_dns_switch";
+    private Activity mActivity;
 
     public CustomDNSSwitchPreferenceController(Context context) {
         super(context);
+        mActivity = (Activity) context;
     }
 
     @Override
@@ -41,14 +46,28 @@ public class CustomDNSSwitchPreferenceController extends AbstractPreferenceContr
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        SystemProperties.set("persist.privacy.iptab_dns_switch",
-              ((Boolean) newValue) ? "1" : "0" );
-
-      // TEST-ONLY CODE - TO BE REMOVED !!!
-        SystemProperties.set("persist.privacy.iptab_dns_srvip4", "1.1.1.1");
-        SystemProperties.set("persist.privacy.iptab_dns_srvip6", "2606:4700:4700::1111");
-      // TEST-ONLY CODE - TO BE REMOVED !!!
-        
+        boolean valDNSx = (Boolean) newValue;
+        String ip4srv = SystemProperties.get("persist.privacy.iptab_dns_srvip4");
+        String ip6srv = SystemProperties.get("persist.privacy.iptab_dns_srvip6");
+        if (valDNSx ) {
+            if (ip4srv.equals("") && ip6srv.equals("")) {
+                new AlertDialog.Builder(mActivity)
+                    .setTitle(R.string.network_custom_dns_placeholder)
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .setMessage(R.string.network_custom_dns_error)
+                    .setNegativeButton(android.R.string.cancel, null)
+                    .create().show();
+                return false;
+            } else if (ip4srv.equals("") || ip6srv.equals("")) {
+                new AlertDialog.Builder(mActivity)
+                    .setTitle(R.string.network_custom_dns_placeholder)
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .setMessage(R.string.network_custom_dns_warning)
+                    .setNeutralButton(android.R.string.ok, null)
+                    .create().show();
+            }
+        }
+        SystemProperties.set("persist.privacy.iptab_dns_switch", valDNSx ? "1" : "0" );
         return true;
     }
 

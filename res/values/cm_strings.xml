@@ -412,5 +412,8 @@
     <string name="network_custom_dns_category">About Custom DNS</string>
     <string name="network_custom_dns_explanation_summary">You can set a custom DNS server (IPv4/IPv6), which will be used instead of the DNS of your ISP or router.\nThe technology behind is a port 53 NAT via the ip(6)tables firewall\nThis will NOT impact connections via a VPN.</string>
     <string name="network_custom_dns_placeholder">No Custom DNS is set</string>
+    <string name="network_custom_dns_reset">Reset</string>
+    <string name="network_custom_dns_error">You have not specified any alternative DNS!\nSetting a custom DNS is therefore not possible.</string>
+    <string name="network_custom_dns_warning">A custom DNS should be set for both, IPv4 and IPv6!\nThe current setup could cause issues.</string>
 
 </resources>

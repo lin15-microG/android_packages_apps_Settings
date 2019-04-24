@@ -32,7 +32,9 @@ import java.util.List;
 /*
  *  Custom DNS Fragment
  */
-public class NetworkCustomDNSFragment extends DashboardFragment {
+public class NetworkCustomDNSFragment extends DashboardFragment implements
+        CustomDNSip4DialogHost, CustomDNSip6DialogHost {
+
     private static final String TAG = "NetworkCustomDNS";
 
     @Override
@@ -61,12 +63,24 @@ public class NetworkCustomDNSFragment extends DashboardFragment {
         final CustomDNSSwitchPreferenceController customDNSSwitchPreferenceController =
                 new CustomDNSSwitchPreferenceController(context);
         final CustomDNSip4PreferenceController customDNSip4PreferenceController =
-                new CustomDNSip4PreferenceController(context);
-        //final CustomDNSip6PreferenceController customDNSip6PreferenceController =
-        //        new CustomDNSIP6PreferenceController(context);
+                new CustomDNSip4PreferenceController(context, fragment);
+        final CustomDNSip6PreferenceController customDNSip6PreferenceController =
+                new CustomDNSip6PreferenceController(context, fragment);
         controllers.add(customDNSSwitchPreferenceController);
         controllers.add(customDNSip4PreferenceController);
-        //controllers.add(customDNSip6PreferenceController);
+        controllers.add(customDNSip6PreferenceController);
         return controllers;
+    }
+
+    public void onCustomDNSip4DialogConfirmed() {
+        final CustomDNSip4PreferenceController controller =
+                getPreferenceController(CustomDNSip4PreferenceController.class);
+        controller.onCustomDNSip4DialogConfirmed();
+    }
+
+    public void onCustomDNSip6DialogConfirmed() {
+        final CustomDNSip6PreferenceController controller =
+                getPreferenceController(CustomDNSip6PreferenceController.class);
+        controller.onCustomDNSip6DialogConfirmed();
     }
 }

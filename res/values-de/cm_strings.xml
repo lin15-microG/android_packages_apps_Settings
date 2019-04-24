@@ -319,5 +319,7 @@
     <string name="network_custom_dns_category">Information</string>
     <string name="network_custom_dns_explanation_summary">Hier kann ein eigener DNS (IPv4/IPv6) gesetzt werden, der anstelle des ISP oder Router DNS verwendet wird.\nDies wird mittels Port 53 NAT über die ip(6)tables Firewall realisiert.\nVPN-Verbindungen sind hiervon ausgenommen.</string>
     <string name="network_custom_dns_placeholder">Eigener DNS nicht gesetzt</string>
-
+    <string name="network_custom_dns_reset">Zurücksetzen</string>
+    <string name="network_custom_dns_error">Es wurde kein alternativer DNS spezifiziert!\nÜberschreiben des DNS ist daher nicht möglich.</string>
+    <string name="network_custom_dns_warning">Eigene DNS Server sollten sowohl für IPv4 als auch für IPv6 definiert werden!\nBei der gewählten Konfiguration können Probleme auftreten.</string>
 </resources>
