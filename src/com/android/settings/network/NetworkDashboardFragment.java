@@ -23,6 +23,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.Fragment;
 import android.content.Context;
+import android.os.SystemProperties;
 import android.provider.SearchIndexableResource;
 import android.support.annotation.VisibleForTesting;
 import android.util.Log;
@@ -69,7 +70,13 @@ public class NetworkDashboardFragment extends DashboardFragment implements
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        mProgressiveDisclosureMixin.setTileLimit(7);
+        int tileLimit = 7;
+
+        // Simplified check, whether SIM config preference is present or not
+        if (SystemProperties.get("persist.radio.multisim.config", "") == "")
+            tileLimit--;
+
+        mProgressiveDisclosureMixin.setTileLimit(tileLimit);
         mNetworkResetController = new NetworkResetActionMenuController(context);
     }
 
