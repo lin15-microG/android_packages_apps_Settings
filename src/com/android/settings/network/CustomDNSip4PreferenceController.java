@@ -26,7 +26,8 @@ import com.android.settings.core.PreferenceControllerMixin;
 import com.android.settings.R;
 import com.android.settingslib.core.AbstractPreferenceController;
 
-public class CustomDNSip4PreferenceController extends AbstractPreferenceController {
+public class CustomDNSip4PreferenceController extends AbstractPreferenceController
+        implements PreferenceControllerMixin {
 
     private static final String TAG = "CustomDNSip4";
     private static final String CUSTOM_DNS_IP4 = "network_custom_dns_ip4";

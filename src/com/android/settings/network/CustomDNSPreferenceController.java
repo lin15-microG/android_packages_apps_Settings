@@ -24,12 +24,14 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
+import com.android.settings.core.PreferenceControllerMixin;
 import com.android.settings.R;
 import com.android.settings.Utils;
 import com.android.settingslib.core.AbstractPreferenceController;
 
 
-public class CustomDNSPreferenceController extends AbstractPreferenceController {
+public class CustomDNSPreferenceController extends AbstractPreferenceController
+        implements PreferenceControllerMixin {
 
     private static final String KEY_NETWORK_CUSTM_DNS = "network_custom_dns";
     private static final String TAG = "NetworkCustomDNS";

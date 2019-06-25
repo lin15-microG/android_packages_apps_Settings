@@ -27,7 +27,7 @@ import com.android.settings.R;
 import com.android.settingslib.core.AbstractPreferenceController;
 
 public class CustomDNSSwitchPreferenceController extends AbstractPreferenceController
-        implements Preference.OnPreferenceChangeListener {
+        implements PreferenceControllerMixin, Preference.OnPreferenceChangeListener {
 
     private static final String TAG = "CustomDNSSwitch";
     private static final String CUSTOM_DNS_SWITCH_KEY = "network_custom_dns_switch";
